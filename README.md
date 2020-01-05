@@ -1,16 +1,24 @@
-# flutter_localisation
+# Flutter Localisation
+**flutter_localisation**
 
-A new Flutter project.
+A small test project to try out language handling an translations.
 
-## Getting Started
+Run the following commands to create all the required generated files. The output folder needs to already exist.
 
-This project is a starting point for a Flutter application.
+# Create lib/i10n/intl_messages.arb
 
-A few resources to get you started if this is your first Flutter project:
+```
+flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n/source lib/localizations.dart
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+This will create the file "intl_messages.arb". Copy this and replace "messages" in the filename with de/en (the supported languages), then run the following command:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Create messages files
+
+```
+flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n/messages lib/localizations.dart lib/l10n/source/intl_en.arb lib/l10n/source/intl_de.arb
+```
+
+# Test translations load
+
+Go in to the emulator phone settings and change the input language to german. Switch back to the app and it will update with the correct language. 
