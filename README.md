@@ -13,7 +13,7 @@ flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n/source
 
 This will create the file "intl_messages.arb". Copy this and replace "messages" in the filename with de/en (the supported languages), then run the following command:
 
-# Create messages files
+# Create message files
 
 ```
 flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n/messages lib/localizations.dart lib/l10n/source/intl_en.arb lib/l10n/source/intl_de.arb
