@@ -1,7 +1,7 @@
 # Flutter Localisation
 **flutter_localisation**
 
-A small test project to try out language handling an translations.
+A small flutter test project to try out language handling an translations.
 
 Run the following commands to create all the required generated files. The output folder needs to already exist.
 
