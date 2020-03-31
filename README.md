@@ -1,5 +1,8 @@
 # Flutter Localisation
+
 **flutter_localisation**
+
+![alt text](https://raw.githubusercontent.com/sketchbuch/flutter_localisation/master/docs/images/preview.gif 'Flutter Localisation')
 
 A small flutter test project to try out language handling and translations.
 
