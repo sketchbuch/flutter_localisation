@@ -38,4 +38,16 @@ Add new translations to the localization.dart file (lib/l10n/app/localizations.d
 
 Then run the second command listed above, this will create the messages that are actually loaded and used by the app.
 
-## 
+## Using Placehodlers
+
+Create a function in localization.dart instead of a getter (getter's cannot accept arguments) and add the placeholders to the args array like so:
+
+```
+  String detailUpdatedOn(String updateddDate) {
+    return Intl.message(
+      'Updated $updateddDate',
+      name: 'detailUpdatedOn',
+      args: [updateddDate],
+    );
+  }
+```
