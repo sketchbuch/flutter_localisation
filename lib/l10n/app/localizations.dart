@@ -1,9 +1,15 @@
 import 'dart:async';
-import 'l10n/messages/messages_all.dart';
+import 'package:flutter_localisation/l10n/app/delegate.dart';
+import 'package:flutter_localisation/l10n/app/messages/messages_all.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+// flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n/app/source lib/l10n/app/localizations.dart
+// flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n/app/messages lib/l10n/app/localizations.dart lib/l10n/app/source/intl_en.arb lib/l10n/app/source/intl_de.arb
+
 class AppLocalizations {
+  static const AppLocalizationsDelegate delegate = AppLocalizationsDelegate();
+
   static Future<AppLocalizations> load(Locale locale) {
     final String name = locale.countryCode == null ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
@@ -24,24 +30,5 @@ class AppLocalizations {
 
   String get hello {
     return Intl.message('Hello', name: 'hello');
-  }
-}
-
-class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
-  const AppLocalizationsDelegate();
-
-  @override
-  bool isSupported(Locale locale) {
-    return ['en', 'de'].contains(locale.languageCode);
-  }
-
-  @override
-  Future<AppLocalizations> load(Locale locale) {
-    return AppLocalizations.load(locale);
-  }
-
-  @override
-  bool shouldReload(LocalizationsDelegate<AppLocalizations> old) {
-    return false;
   }
 }

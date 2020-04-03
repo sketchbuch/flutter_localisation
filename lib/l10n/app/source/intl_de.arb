@@ -1,8 +1,8 @@
 {
-  "@@last_modified": "2020-01-05T15:14:04.292815",
-  "title": "Hallo-Welt App",
+  "@@last_modified": "2020-04-03T21:58:15.163093",
+  "title": "Hallo Welt App",
   "@title": {
-    "description": "Der Anwendung Titel",
+  "title": "Der Anwendung Titel",
     "type": "text",
     "placeholders": {}
   },
